@@ -14,8 +14,11 @@ HEIGHT_SCREEN = 667
 WIDTH_SCREEN = 1000
 
 # Screen setup
-background_image = pygame.image.load("fondos\photo-1609710228159-0fa9bd7c0827.jpg")
-background_rect = background_image.get_rect()
+try:
+    background_image = pygame.image.load("fondos\photoinicio.jpg")
+    background_rect = background_image.get_rect()
+except:
+     None
 screen = pygame.display.set_mode((WIDTH_SCREEN, HEIGHT_SCREEN))
 pygame.display.set_caption("configuration")
 clock = pygame.time.Clock()
@@ -65,8 +68,10 @@ while setup_options is None:
             event, drop_down_obstacle, drop_down_wind, drop_down_obstacle_2,end_matched)
         if setup_options:
             break
-
-    screen.blit(background_image, background_rect)
+    try:
+        screen.blit(background_image, background_rect)
+    except:
+        screen.fill(Colors.light_salmon)
 
     text_obstacle.draw(screen)
     drop_down_obstacle.draw(screen)
@@ -117,7 +122,7 @@ def ball_animation():
         ball_speed_x = -ball_speed_x -0.05 
         ball_speed_y = random.choice([1, -1]) * random.uniform(1, 5)
         # Aumenta la velocidad de la bola cada vez que colisiona con la paleta
-        if(-ball_speed_x < 25):
+        if(-ball_speed_x < 25 or palets_size == "full"):
             ball_speed_x *= 1.05
         tick += 1
         print(f"velocidad de la bola jugador:{ball_speed_x}")
@@ -126,7 +131,7 @@ def ball_animation():
     if ball.colliderect(opponent) and ball_speed_x < 0:
         ball_speed_x = -ball_speed_x -0.05
         ball_speed_y = random.choice([1, -1]) * random.uniform(1, 5)
-        if(ball_speed_x < 25):
+        if(ball_speed_x < 25 or palets_size == "full"):
             ball_speed_x *= 1.05
         print(f"velocidad de la bola opponent:{ball_speed_x}")
         
@@ -193,8 +198,11 @@ def winner_player(player):
     HEIGHT_WINNER_SCREEN = 640
 
     # screen to display winner
-    background_image = pygame.image.load("fondos\pngtree-tennis-achievement-award-vector-sport-banner-background-yellow-ball-winner-cup-png-image_1876411.jpg")
-    background_rect = background_image.get_rect()
+    try:
+        background_image = pygame.image.load("fondos\winner trophy.jpg")
+        background_rect = background_image.get_rect()
+    except:
+         None
     screen = pygame.display.set_mode((WIDTH_WINNER_SCREEN, HEIGHT_WINNER_SCREEN))
     pygame.display.set_caption("Winner")
     clock = pygame.time.Clock()
@@ -213,8 +221,10 @@ def winner_player(player):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
-
-        screen.blit(background_image, background_rect)
+        try:
+            screen.blit(background_image, background_rect)
+        except:
+            screen.fill(Colors.light_salmon)
         text.draw(screen)
 
         pygame.display.update()

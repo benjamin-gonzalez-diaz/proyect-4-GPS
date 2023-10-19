@@ -39,7 +39,7 @@ class ButtonSetUp(Button):
     def __init__(self, x, y, w, h, text, color_inactive=Colors.grey, color_disabled=Colors.blue, color_active=Colors.green):
         super().__init__(x, y, w, h, text, color_inactive, color_disabled, color_active)
 
-    def handle_event(self, event, drop_down_obstacle, drop_down_wind,total_ball,end_match):
+    def handle_event(self, event, ball_size, palette_size,total_ball,end_match):
         if event.type == pygame.MOUSEBUTTONDOWN and self.enabled:
             if self.rect.collidepoint(event.pos):
                 self.pressed = True
@@ -52,8 +52,8 @@ class ButtonSetUp(Button):
         elif event.type == pygame.MOUSEBUTTONUP:
             if self.pressed:  # Solo revisamos si estaba presionado
                 if self.rect.collidepoint(event.pos) and not self.was_out:  # Si se soltó el clic dentro del botón y el usuario no salió antes
-                    data = {"balls_size": drop_down_obstacle.get_option(), 
-                            "palets_size": drop_down_wind.get_option(), 
+                    data = {"balls_size": ball_size.get_option(), 
+                            "palets_size": palette_size.get_option(), 
                             "balls": total_ball.get_option(),
                             "end": end_match.get_option()}
                     self.color = self.color_inactive
