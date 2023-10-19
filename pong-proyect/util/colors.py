@@ -1,0 +1,44 @@
+class Colors:
+    white = (255, 255, 255)
+    black = (0, 0, 0)
+    grey = (128, 128, 128)
+    red = (255, 0, 0)
+    green = (0, 255, 0)
+    blue = (0, 0, 255)
+    light_grey = (200, 200, 200)
+    rose = (255, 192, 203)
+    yellow = (255, 255, 0)
+    purple = (128, 0, 128)
+    cyan = (0, 255, 255)
+    orange = (255, 165, 0)
+    brown = (139, 69, 19)
+    pink = (255, 105, 180)
+    gold = (255, 215, 0)
+    silver = (192, 192, 192)
+    lime = (0, 255, 0)  # Verde lima
+    olive = (128, 128, 0)  # Oliva
+    teal = (0, 128, 128)  # Verde azulado
+    forest_green = (34, 139, 34)  # Verde bosque
+    mint = (189, 252, 201)  # Menta
+    lime_green = (50, 205, 50)  # Verde lima
+    spring_green = (0, 255, 127)  # Verde primavera
+    sea_green = (46, 139, 87)  # Verde mar
+    # azules ---
+    navy = (0, 0, 128)  # Azul marino
+    royal_blue = (65, 105, 225)  # Azul real
+    sky_blue = (135, 206, 235)  # Azul cielo
+    dodger_blue = (30, 144, 255)  # Azul esquivador
+    steel_blue = (70, 130, 180)  # Azul acero
+    medium_blue = (0, 0, 205)  # Azul medio
+    # rojos ---
+    dark_red = (139, 0, 0)  # Rojo oscuro
+    fire_brick = (178, 34, 34)  # Ladrillo de fuego
+    crimson = (220, 20, 60)  # Carmesí
+    tomato = (255, 99, 71)  # Tomate
+    indian_red = (205, 92, 92)  # Rojo indio
+    light_coral = (240, 128, 128)  # Coral claro
+    dark_orange = (255, 140, 0)  # Naranja oscuro
+    coral = (255, 127, 80)  # Coral
+    light_salmon = (255, 160, 122)  # Salmón claro
+    deep_pink = (255, 20, 147)  # Rosa profundo
+    hot_pink = (255, 105, 180)  # Rosa fuerte
