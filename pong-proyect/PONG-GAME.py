@@ -26,31 +26,31 @@ clock = pygame.time.Clock()
 
 
 width_obstacle = 10
-text_obstacle = Text(width_obstacle, 0, "ball size")
-options = ["very_EASY","Easy", "Medium", "Hard", "ultra_Hard"] # easy  grande, medium normal, hard chica
+text_obstacle = Text(width_obstacle, 0, "Ball Size")
+options = ["Very Easy","Easy", "Medium", "Hard", "Very Hard"] # easy  grande, medium normal, hard chica
 drop_down_obstacle = DropDown(
     width_obstacle, text_obstacle.font_size, 190, 40, options)
 
 width_wind = width_obstacle + drop_down_obstacle.width + 10
-text_wind = Text(width_wind, 0, "palette size")
+text_wind = Text(width_wind, 0, "Paddle Size")
 options = ["Easy", "Medium", "Hard", "full"] # easy  grande, medium normal, hard chica
 drop_down_wind = DropDown(width_wind, text_wind.font_size, 200, 40, options)
 
 
 width_obstacle_2 = width_wind + drop_down_wind.width + 10
-text_obstacle_2 = Text(width_obstacle_2, 0, "mouse/keyboard guest") # opcion extra
-options_2 = ["mouse", "teclado (w,s)"]
+text_obstacle_2 = Text(width_obstacle_2, 0, "Guest controls") # opcion extra
+options_2 = ["Mouse", "Teclado (w,s)"]
 drop_down_obstacle_2 = DropDown(width_obstacle_2, text_obstacle_2.font_size, 210, 40, options_2)
 
 
 end = width_obstacle_2 + drop_down_obstacle_2.width + 190
-text_end_matched = Text(end, 0, "end match")
+text_end_matched = Text(end - 50, 0, "Goals to win")
 options_3 = ["1", "2", "3","4","5","6","7","8","9","10"]
-end_matched = DropDown(end, text_end_matched.font_size, 180, 40, options_3)
+end_matched = DropDown(end - 50, text_end_matched.font_size, 180, 40, options_3)
 
-button = ButtonSetUp(540, 300, 160, 50, "Continue")
-note_izq = ButtonSetUp(230, 550, 570, 40, "teclado|mouse: w|click izq = arriba")
-note_der = ButtonSetUp(230, 600, 570, 40, "teclado|mouse:  s|click der = abajo")
+button = ButtonSetUp(400, 300, 200, 50, "Start Game")
+note_izq = ButtonSetUp(200, 550, 640, 40, "Jugador Izq: W/S o LeftClick/RightClick")
+note_der = ButtonSetUp(200, 600, 640, 40, "Jugador Der: Up/Down")
 
 setup_options = None
 
@@ -245,11 +245,11 @@ winner = ""
 
 # variables del juego (elegidas en setup)
 balls_sized = {
-    "very_EASY": random.randint(170,210),
+    "Very Easy": random.randint(170,210),
     "Easy": random.randint(100, 170),
     "Medium": random.randint(40, 70),
     "Hard": 20,
-    "ultra_Hard": random.randint(5, 19)
+    "Very Hard": random.randint(5, 19)
 }
 # pallet_sized = {
 #     "full": screen_width,
@@ -323,7 +323,7 @@ while True:
     opponent_animation()
     #logica de los botones
 	# Obtiene el estado de los botones del mouse
-    if(count_balls == "mouse"):
+    if(count_balls == "Mouse"):
         mouse_buttons = pygame.mouse.get_pressed()
         # mouse_buttons[0] representa el botón izquierdo, mouse_buttons[2] representa el botón derecho
         if mouse_buttons[0]:  # Botón izquierdo presionado
@@ -333,7 +333,7 @@ while True:
         if mouse_buttons[1]:
             print("pulsando boton")
     # Nueva lógica para controlar al oponente con el teclado
-    if(count_balls == "teclado (w,s)"):
+    if(count_balls == "Teclado (w,s)"):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_s]:
             opponent.y += 7
